@@ -18,3 +18,60 @@
 @media (max-width:520px){
   .turnstile-wrap{justify-content:center}
 }
+
+/* Premium benefit icons — Apps que impulsan tu negocio */
+.benefits>div{
+  position:relative;
+  grid-template-columns:58px 1fr;
+  column-gap:13px;
+  align-items:center;
+  padding:13px 12px 13px 10px;
+  border:1px solid #edf0f7;
+  border-radius:18px;
+  background:linear-gradient(180deg,#fff 0%,#fbfcff 100%);
+  box-shadow:0 10px 28px rgba(38,52,99,.055);
+  transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;
+  overflow:hidden;
+}
+.benefits>div:after{
+  content:"";
+  position:absolute;
+  width:72px;height:72px;border-radius:50%;
+  right:-34px;top:-38px;
+  background:var(--benefit-glow,#6b5df6);
+  opacity:.08;
+}
+.benefits>div:hover{
+  transform:translateY(-4px);
+  border-color:#e0e4f4;
+  box-shadow:0 16px 34px rgba(38,52,99,.1);
+}
+.benefits i{
+  --benefit-a:#6d5df6;
+  --benefit-b:#4d67f5;
+  --benefit-glow:#6d5df6;
+  grid-row:1/3;
+  width:50px;height:50px;
+  display:grid;place-items:center;
+  border-radius:15px;
+  background:linear-gradient(145deg,var(--benefit-a),var(--benefit-b));
+  color:#fff;
+  box-shadow:0 10px 22px color-mix(in srgb,var(--benefit-a) 24%, transparent);
+  transform:rotate(-3deg);
+}
+.benefits i svg{
+  width:24px;height:24px;
+  fill:none;stroke:currentColor;stroke-width:1.8;
+  stroke-linecap:round;stroke-linejoin:round;
+}
+.benefits>div:nth-child(2) i{--benefit-a:#ff7a3d;--benefit-b:#ffb23f;--benefit-glow:#ff8a3d}
+.benefits>div:nth-child(3) i{--benefit-a:#16b9a7;--benefit-b:#25cf89;--benefit-glow:#16b9a7}
+.benefits>div:nth-child(4) i{--benefit-a:#4f7cff;--benefit-b:#6c4cf2;--benefit-glow:#5f62f7}
+.benefits>div:nth-child(5) i{--benefit-a:#ed4c9b;--benefit-b:#9c5cf7;--benefit-glow:#d34faa}
+.benefits>div:nth-child(6) i{--benefit-a:#1d9bf0;--benefit-b:#5068f5;--benefit-glow:#328bf2}
+.benefits b{font-size:12.5px;color:#18213a;line-height:1.25}
+.benefits span{font-size:11px;color:#7f899c;line-height:1.3;margin-top:2px}
+@media(max-width:560px){
+  .benefits>div{grid-template-columns:54px 1fr;padding:12px 12px 12px 10px}
+  .benefits i{width:46px;height:46px;border-radius:14px}
+}
