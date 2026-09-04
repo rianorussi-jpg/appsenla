@@ -15,20 +15,20 @@ quoteForm?.addEventListener('submit',async e=>{
 
   try{
     const data=Object.fromEntries(new FormData(form).entries());
-    const response=await fetch(form.action,{
+    const response=await fetch('/api/contact',{
       method:'POST',
-      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      headers:{'Content-Type':'application/json'},
       body:JSON.stringify(data)
     });
     const result=await response.json().catch(()=>({}));
-    if(!response.ok || result.success===false) throw new Error('No se pudo enviar');
+    if(!response.ok || !result.success) throw new Error(result.error||'No se pudo enviar');
 
     msg.className='form-message success';
     msg.textContent='¡Gracias! Recibimos tu solicitud. Te contactaremos muy pronto.';
     form.reset();
   }catch(error){
     msg.className='form-message error';
-    msg.textContent='No pudimos enviar tu solicitud. Inténtalo nuevamente o escríbenos a apps@enla.mx.';
+    msg.textContent='No pudimos enviar tu solicitud. Inténtalo nuevamente en unos segundos.';
   }finally{
     button.disabled=false;
     button.innerHTML=originalButton;
