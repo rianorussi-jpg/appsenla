@@ -6,6 +6,7 @@
   <meta name="description" content="apps.enla — Diseño y desarrollo de aplicaciones para iPhone y Android." />
   <title>apps.enla — Tu idea, en una app</title>
   <link rel="stylesheet" href="styles.css" />
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" defer></script>
 </head>
 <body>
   <header class="nav wrap">
@@ -163,7 +164,10 @@
           <div class="form-grid"><input required name="nombre" placeholder="Tu nombre" /><input required name="contacto" placeholder="WhatsApp o correo" /></div>
           <select name="tipo" required><option value="" selected disabled>¿Qué tipo de app necesitas?</option><option>App para mi negocio</option><option>Restaurante / delivery</option><option>Citas / reservaciones</option><option>Fitness / membresías</option><option>Eventos / entretenimiento</option><option>Juego</option><option>Otra idea</option></select>
           <textarea required name="idea" rows="4" placeholder="Cuéntanos brevemente tu idea..."></textarea>
-          <button class="btn btn-light" type="submit">Cotizar mi app ahora <span>→</span></button>
+          <div class="turnstile-wrap">
+            <div id="turnstileWidget" aria-label="Verificación de seguridad"></div>
+          </div>
+          <button class="btn btn-light" id="quoteSubmit" type="submit" disabled>Cotizar mi app ahora <span>→</span></button>
           <p id="formMessage" class="form-message" aria-live="polite"></p>
         </form>
       </div>

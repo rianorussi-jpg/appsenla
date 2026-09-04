@@ -15,15 +15,40 @@ module.exports = async function handler(req, res) {
 
   const token = process.env.TELEGRAM_BOT_TOKEN;
   const chatId = process.env.TELEGRAM_CHAT_ID;
-  if (!token || !chatId) {
-    console.error('Faltan TELEGRAM_BOT_TOKEN o TELEGRAM_CHAT_ID');
-    return res.status(500).json({ success: false, error: 'Telegram no está configurado' });
+  const turnstileSecret = process.env.TURNSTILE_SECRET_KEY;
+  if (!token || !chatId || !turnstileSecret) {
+    console.error('Faltan variables de Telegram o TURNSTILE_SECRET_KEY');
+    return res.status(500).json({ success: false, error: 'El formulario no está configurado' });
   }
 
-  const { nombre, contacto, tipo, idea, _honey } = req.body || {};
+  const { nombre, contacto, tipo, idea, _honey, turnstileToken } = req.body || {};
 
   // Campo trampa anti-bots. Para un usuario real siempre llega vacío.
   if (_honey) return res.status(200).json({ success: true });
+
+  if (!turnstileToken) {
+    return res.status(400).json({ success: false, error: 'Verificación de seguridad requerida' });
+  }
+
+  // Validación obligatoria del token con Cloudflare Siteverify.
+  try {
+    const verifyResponse = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        secret: turnstileSecret,
+        response: turnstileToken
+      })
+    });
+    const verification = await verifyResponse.json();
+    if (!verification.success || (verification.action && verification.action !== 'contact_form')) {
+      console.warn('Turnstile rechazó la solicitud:', verification['error-codes'] || verification);
+      return res.status(403).json({ success: false, error: 'Verificación de seguridad inválida o expirada' });
+    }
+  } catch (error) {
+    console.error('Error verificando Turnstile:', error);
+    return res.status(502).json({ success: false, error: 'No se pudo validar la verificación de seguridad' });
+  }
 
   if (!nombre || !contacto || !tipo || !idea) {
     return res.status(400).json({ success: false, error: 'Completa todos los campos' });

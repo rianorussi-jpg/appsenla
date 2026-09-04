@@ -3,3 +3,18 @@
 @media(max-width:560px){.wrap{width:min(100% - 26px,1180px)}.nav{height:68px}.brand{font-size:23px}.btn-small{padding:10px 12px}.hero{min-height:auto;padding:45px 0}.hero h1{font-size:48px}.hero p{font-size:16px}.hero-visual{min-height:340px}.section{padding:72px 0}.example-grid{grid-template-columns:1fr}.phone-stage{height:390px}.benefits,.feature-grid,.steps,.form-grid{grid-template-columns:1fr}.two-col{gap:45px}.quote-card{padding:30px 22px}.store-section>img{height:260px}.feature-grid>div{padding:20px}.section-head h2,.business h2,.admin h2,.stores h2,.quote h2{font-size:38px}}
 
 .form-honey{position:absolute!important;left:-9999px!important;opacity:0!important;pointer-events:none!important}.form-message.success{color:#86efac}.form-message.error{color:#fda4af}.quote-form button:disabled{opacity:.65;cursor:not-allowed;transform:none}
+
+
+/* Cloudflare Turnstile */
+.turnstile-wrap{
+  display:flex;
+  justify-content:flex-start;
+  align-items:center;
+  min-height:65px;
+  margin-top:2px;
+}
+#turnstileWidget{width:100%;max-width:420px}
+.quote-form button:disabled{opacity:.58;cursor:not-allowed;transform:none!important}
+@media (max-width:520px){
+  .turnstile-wrap{justify-content:center}
+}
