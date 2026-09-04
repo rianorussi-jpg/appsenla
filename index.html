@@ -6,7 +6,7 @@
   <meta name="description" content="apps.enla — Diseño y desarrollo de aplicaciones para iPhone y Android." />
   <title>apps.enla | Desarrollo de apps para iOS y Android</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <link rel="stylesheet" href="styles.css?v=20260904-0208" />
+  <link rel="stylesheet" href="styles.css?v=20260904-0215" />
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" defer></script>
 </head>
 <body>
@@ -58,7 +58,9 @@
           <button class="filter" data-filter="entretenimiento">Entretenimiento</button>
         </div>
 
-        <div class="example-grid">
+        <div class="example-carousel-shell">
+          <button class="carousel-arrow carousel-prev" type="button" aria-label="Ejemplo anterior">‹</button>
+          <div class="example-grid" id="exampleCarousel">
           <article class="example-card" data-category="salud">
             <div class="phone-stage blue"><img src="images/example-medicare.png" alt="Concepto ficticio MediCare+" /></div>
             <h3>MediCare+</h3><span>Salud</span><p>Citas, expediente, recordatorios y seguimiento de pacientes.</p>
@@ -75,6 +77,8 @@
             <div class="phone-stage violet"><img src="images/example-nexora.png" alt="Concepto ficticio Nexora" /></div>
             <h3>Nexora</h3><span>Entretenimiento</span><p>Eventos, experiencias, reservaciones y acceso digital.</p>
           </article>
+          </div>
+          <button class="carousel-arrow carousel-next" type="button" aria-label="Siguiente ejemplo">›</button>
         </div>
       </div>
     </section>
@@ -178,6 +182,6 @@
   <a class="floating-quote" href="#cotizar" aria-label="Ir al formulario para cotizar mi app">Cotizar mi app <span>→</span></a>
 
   <footer class="footer wrap"><a class="brand" href="#inicio">apps.<span>enla</span></a><p>Diseño y desarrollo de aplicaciones para iOS y Android.</p><small>© 2026 Enla. Todos los derechos reservados.</small></footer>
-  <script src="script.js"></script>
+  <script src="script.js?v=20260904-0215"></script>
 </body>
 </html>

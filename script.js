@@ -101,3 +101,39 @@ quoteForm?.addEventListener('submit',async e=>{
     button.disabled=true;
   }
 });
+
+// Carrusel de ejemplos: swipe en móvil + flechas en escritorio
+const exampleCarousel=document.getElementById('exampleCarousel');
+const carouselPrev=document.querySelector('.carousel-prev');
+const carouselNext=document.querySelector('.carousel-next');
+
+function visibleExampleCards(){
+  return [...document.querySelectorAll('.example-card')].filter(card=>!card.classList.contains('hidden'));
+}
+function carouselStep(){
+  const card=visibleExampleCards()[0];
+  if(!card||!exampleCarousel)return 0;
+  const gap=parseFloat(getComputedStyle(exampleCarousel).gap||0);
+  return card.getBoundingClientRect().width+gap;
+}
+function updateCarouselButtons(){
+  if(!exampleCarousel||!carouselPrev||!carouselNext)return;
+  const max=Math.max(0,exampleCarousel.scrollWidth-exampleCarousel.clientWidth-2);
+  carouselPrev.disabled=exampleCarousel.scrollLeft<=2;
+  carouselNext.disabled=exampleCarousel.scrollLeft>=max;
+}
+carouselPrev?.addEventListener('click',()=>exampleCarousel.scrollBy({left:-carouselStep(),behavior:'smooth'}));
+carouselNext?.addEventListener('click',()=>exampleCarousel.scrollBy({left:carouselStep(),behavior:'smooth'}));
+exampleCarousel?.addEventListener('scroll',updateCarouselButtons,{passive:true});
+window.addEventListener('resize',updateCarouselButtons);
+
+// Al filtrar, vuelve al inicio del carrusel.
+document.querySelectorAll('.filter').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    requestAnimationFrame(()=>{
+      if(exampleCarousel)exampleCarousel.scrollTo({left:0,behavior:'smooth'});
+      setTimeout(updateCarouselButtons,180);
+    });
+  });
+});
+updateCarouselButtons();
