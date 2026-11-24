@@ -7,7 +7,7 @@ function escapeHtml(value = '') {
     .replace(/'/g, '&#039;');
 }
 
-module.exports = async function handler(req, res) {
+async function sendContact(req, res, home = false) {
   if (req.method !== 'POST') {
     res.setHeader('Allow', 'POST');
     return res.status(405).json({ success: false, error: 'Método no permitido' });
@@ -54,18 +54,18 @@ module.exports = async function handler(req, res) {
     return res.status(400).json({ success: false, error: 'Completa todos los campos' });
   }
 
-  if ([nombre, contacto, tipo].some(v => String(v).length > 180) || String(idea).length > 2500) {
+  if ([nombre, tipo].some(v => String(v).length > 180) || String(contacto).length > (home ? 290 : 180) || String(idea).length > 2500) {
     return res.status(400).json({ success: false, error: 'La información es demasiado larga' });
   }
 
   const message = [
-    '🚀 <b>Nueva solicitud desde apps.enla.mx</b>',
+    home ? '📩 <b>Nueva consulta desde enla.mx</b>' : '🚀 <b>Nueva solicitud desde apps.enla.mx</b>',
     '',
     `👤 <b>Nombre:</b> ${escapeHtml(nombre)}`,
     `📲 <b>Contacto:</b> ${escapeHtml(contacto)}`,
-    `📱 <b>Tipo de app:</b> ${escapeHtml(tipo)}`,
+    `${home ? "🌐 <b>Servicio:</b>" : "📱 <b>Tipo de app:</b>"} ${escapeHtml(tipo)}`,
     '',
-    '💡 <b>Idea:</b>',
+    home ? '💬 <b>Mensaje:</b>' : '💡 <b>Idea:</b>',
     escapeHtml(idea),
     '',
     `🕒 <i>${new Date().toLocaleString('es-MX', { timeZone: 'America/Mexico_City' })}</i>`
@@ -94,4 +94,7 @@ module.exports = async function handler(req, res) {
     console.error('Error enviando a Telegram:', error);
     return res.status(500).json({ success: false, error: 'Error interno' });
   }
-};
+}
+
+module.exports = (req, res) => sendContact(req, res);
+module.exports.sendContact = sendContact;
