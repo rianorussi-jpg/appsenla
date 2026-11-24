@@ -1,190 +1,198 @@
 <!doctype html>
-<html lang="es">
+<html lang="es-MX">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="apps.enla — Diseño y desarrollo de aplicaciones para iPhone y Android." />
-  <title>apps.enla | Desarrollo de apps para iOS y Android</title>
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <link rel="stylesheet" href="styles.css?v=20260904-0215" />
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" defer></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fffdf6">
+  <meta name="description" content="Desarrollo de apps a la medida para iPhone y Android. Explora ejemplos, funciones y el proceso de Enla antes de cotizar tu app.">
+  <title>Apps móviles para tu negocio — Enla</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/apps.css">
+  <script defer src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"></script>
+  <script defer src="/verification.js"></script>
+  <script defer src="/script.js"></script>
 </head>
 <body>
-  <header class="nav wrap">
-    <a class="brand" href="#inicio" aria-label="apps.enla">apps.<span>enla</span></a>
-    <nav>
-      <a href="https://enla.mx">Inicio</a>
-      <a href="#inicio">Apps</a>
-      <a href="https://rewards.enla.mx">Rewards</a>
-    </nav>
-    <div style="display:flex;align-items:center;gap:16px;">
-      <nav style="display:block;"><a href="https://wa.me/524412123348" target="_blank" rel="noopener noreferrer">Contactar</a></nav>
-      <a class="btn btn-small" href="#cotizar">Cotizar mi app</a>
+  <a class="skip" href="#contenido">Ir al contenido</a>
+  <header class="header" id="inicio">
+    <div class="shell nav-wrap">
+      <a class="brand" href="https://www.enla.mx/" aria-label="Enla, inicio"><i data-icon="brand"></i><span>enla<b>.</b></span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú"><i data-icon="menu"></i></button>
+      <nav class="nav" id="main-nav" aria-label="Navegación principal">
+        <a href="https://www.enla.mx/#agentes">Agentes de IA</a>
+        <a href="/" aria-current="page">Apps</a>
+        <a href="https://www.enla.mx/#soluciones">Soluciones</a>
+        <a href="https://www.enla.mx/#contacto">Contacto</a>
+      </nav>
+      <a class="button button-outline nav-cta" href="https://wa.me/524412123348" target="_blank" rel="noopener noreferrer"><i data-icon="chat"></i> Hablemos</a>
     </div>
   </header>
-
-  <main>
-    <section class="hero wrap" id="inicio">
-      <div class="hero-copy">
-        <span class="eyebrow">APPS PARA iOS + ANDROID</span>
-        <h1>Tu idea.<br><em>En una app.</em></h1>
-        <p>Diseñamos y desarrollamos aplicaciones para iPhone y Android, listas para publicar en App Store y Google Play.</p>
-        <div class="hero-actions">
-          <a class="btn" href="#cotizar">Cotizar mi app <span>→</span></a>
-          <a class="btn btn-secondary" href="#ejemplos">Ver ejemplos</a>
-        </div>
-        <div class="store-row">
-          <div class="store-badge"><span class="apple"></span><span><small>Tu App en</small><b>App Store</b></span></div>
-          <div class="store-badge"><span class="play">▶</span><span><small>Tu App en</small><b>Google Play</b></span></div>
-        </div>
-        <div class="platform-note">◉ Somos tu mejor opción.</div>
-      </div>
-      <div class="hero-visual">
-        <div class="orb orb-one"></div><div class="orb orb-two"></div><div class="cube cube-one"></div>
-        <img src="images/hero-apps.png" alt="Ejemplos de aplicaciones móviles creadas por apps.enla" />
-      </div>
-    </section>
-
-    <section class="section examples" id="ejemplos">
-      <div class="wrap">
-        <div class="section-head centered">
-          <span class="eyebrow">EJEMPLOS DE LO QUE PODEMOS CREAR</span>
-          <h2>Una app para cada idea.</h2>
-          <p>Estos ejemplos son conceptos ficticios para mostrar distintos tipos de proyectos que podemos desarrollar.</p>
-        </div>
-
-        <div class="filters" role="tablist">
-          <button class="filter active" data-filter="all">Todos</button>
-          <button class="filter" data-filter="salud">Salud</button>
-          <button class="filter" data-filter="restaurante">Restaurantes</button>
-          <button class="filter" data-filter="fitness">Fitness</button>
-          <button class="filter" data-filter="entretenimiento">Entretenimiento</button>
-        </div>
-
-        <div class="example-carousel-shell">
-          <button class="carousel-arrow carousel-prev" type="button" aria-label="Ejemplo anterior">‹</button>
-          <div class="example-grid" id="exampleCarousel">
-          <article class="example-card" data-category="salud">
-            <div class="phone-stage blue"><img src="images/example-medicare.png" alt="Concepto ficticio MediCare+" /></div>
-            <h3>MediCare+</h3><span>Salud</span><p>Citas, expediente, recordatorios y seguimiento de pacientes.</p>
-          </article>
-          <article class="example-card" data-category="restaurante">
-            <div class="phone-stage orange"><img src="images/example-foodora.png" alt="Concepto ficticio Foodora" /></div>
-            <h3>Foodora</h3><span>Restaurantes</span><p>Menú, pedidos, promociones, pagos y seguimiento.</p>
-          </article>
-          <article class="example-card" data-category="fitness">
-            <div class="phone-stage teal"><img src="images/example-fitlab.png" alt="Concepto ficticio FitLab" /></div>
-            <h3>FitLab</h3><span>Fitness</span><p>Clases, membresías, rutinas, reservas y comunidad.</p>
-          </article>
-          <article class="example-card" data-category="entretenimiento">
-            <div class="phone-stage violet"><img src="images/example-nexora.png" alt="Concepto ficticio Nexora" /></div>
-            <h3>Nexora</h3><span>Entretenimiento</span><p>Eventos, experiencias, reservaciones y acceso digital.</p>
-          </article>
+  <main id="contenido" class="apps-page">
+    <section class="apps-hero" aria-labelledby="apps-title">
+      <div class="shell">
+        <nav class="apps-breadcrumb" aria-label="Ubicación en el sitio"><a href="https://www.enla.mx/">Inicio</a><span aria-hidden="true">/</span><a href="https://www.enla.mx/#soluciones">Soluciones</a><span aria-hidden="true">/</span><span aria-current="page">Apps móviles</span></nav>
+        <div class="apps-hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Desarrollo para iPhone y Android</p>
+            <h1 id="apps-title">Tu negocio,<br>en una <em>app.</em></h1>
+            <p class="hero-description">Diseñamos una app con tu marca para que tus clientes puedan reservar, comprar o consultar sus beneficios desde el celular.</p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#cotizar">Cotizar mi app</a>
+              <a class="button button-outline" href="#ejemplos">Ver cómo funcionaría</a>
+            </div>
           </div>
-          <button class="carousel-arrow carousel-next" type="button" aria-label="Siguiente ejemplo">›</button>
-        </div>
-      </div>
-    </section>
-
-    <section class="section business">
-      <div class="wrap two-col">
-        <div>
-          <span class="eyebrow">HECHAS PARA TU NEGOCIO</span>
-          <h2>Apps que <em>impulsan</em><br>tu negocio.</h2>
-          <p>Desarrollamos aplicaciones personalizadas según tus necesidades y las de tus usuarios.</p>
-          <div class="benefits">
-            <div><i><svg viewBox="0 0 24 24"><path d="M4 17.5V20h2.5L18.8 7.7l-2.5-2.5L4 17.5Z"/><path d="m15.6 5.9 2.5 2.5M7 5h4M5 7v4"/></svg></i><b>Diseño atractivo</b><span>y moderno</span></div>
-            <div><i><svg viewBox="0 0 24 24"><path d="M13 3 5 14h6l-1 7 8-11h-6l1-7Z"/></svg></i><b>Rendimiento</b><span>rápido y estable</span></div>
-            <div><i><svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.8 2.8 8.2 7 10 4.2-1.8 7-5.2 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg></i><b>Seguridad</b><span>y confiabilidad</span></div>
-            <div><i><svg viewBox="0 0 24 24"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 19h14"/></svg></i><b>Publicación</b><span>App Store y Google Play</span></div>
-            <div><i><svg viewBox="0 0 24 24"><path d="M6 18a4 4 0 0 1-1-7.9A7 7 0 0 1 18.6 8 4.5 4.5 0 0 1 18 17H9"/><path d="M8 17v-4h4M8 13l4 4"/></svg></i><b>Soporte</b><span>y actualizaciones</span></div>
-            <div><i><svg viewBox="0 0 24 24"><path d="M5 19V9M12 19V5M19 19v-7"/><path d="m4 8 4-3 4 3 4-5 4 3"/></svg></i><b>Escalables</b><span>para crecer contigo</span></div>
+          <div class="apps-showcase" aria-hidden="true">
+            <div class="apps-device device-back"><img src="/enla-example-fitlab.webp" alt="" width="507" height="760"></div>
+            <div class="apps-device device-front"><img src="/enla-example-foodora.webp" alt="" width="507" height="760" fetchpriority="high"></div>
+            <div class="app-tag app-tag-order"><i data-icon="check"></i><span>Pedido confirmado</span></div>
+            <div class="app-tag app-tag-brand"><i data-icon="mobile"></i><span>Tu app, con tu marca</span></div>
           </div>
         </div>
-        <div class="image-card"><img src="images/dashboard.png" alt="Ejemplo ficticio de dashboard para una app" /></div>
       </div>
+      <nav class="apps-section-nav" aria-label="Contenido de Apps móviles">
+        <div class="shell">
+          <a href="#ejemplos">Ejemplos de apps</a>
+          <a href="#incluye">Qué puede incluir</a>
+          <a href="#proceso">Cómo trabajamos</a>
+          <a href="#cotizar">Cotizar</a>
+        </div>
+      </nav>
     </section>
 
-    <section class="section features" id="funciones">
-      <div class="wrap">
-        <div class="section-head centered"><span class="eyebrow">PERSONALIZADA PARA TI</span><h2>Todo lo que tu app necesita.</h2></div>
-        <div class="feature-grid">
-          <div><i><svg viewBox="0 0 24 24"><path d="M16 20v-1.7a3.3 3.3 0 0 0-3.3-3.3H6.3A3.3 3.3 0 0 0 3 18.3V20"/><circle cx="9.5" cy="8" r="3.5"/><path d="M16 5.2a3.5 3.5 0 0 1 0 6.6M21 20v-1.7a3.3 3.3 0 0 0-2.5-3.2"/></svg></i><b>Usuarios</b><span>y perfiles</span></div>
-          <div><i><svg viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"/><path d="M10 21h4"/></svg></i><b>Notificaciones</b><span>Push</span></div>
-          <div><i><svg viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="3"/><path d="M2.5 9.5h19M6 15h4"/></svg></i><b>Pagos</b><span>seguros</span></div>
-          <div><i><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18"/><path d="m8 15 2 2 5-5"/></svg></i><b>Reservaciones</b><span>y citas</span></div>
-          <div><i><svg viewBox="0 0 24 24"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg></i><b>Ubicación</b><span>y mapas</span></div>
-          <div><i><svg viewBox="0 0 24 24"><path d="M4 10v10h16V10M3 4h18l-2 6H5L3 4Z"/><path d="M8 20v-6h8v6"/></svg></i><b>Tienda</b><span>y catálogo</span></div>
-          <div><i><svg viewBox="0 0 24 24"><path d="M12 3 15 8l5.5 1-3.8 4.2.8 5.8-5.5-2.5L6.5 19l.8-5.8L3.5 9 9 8l3-5Z"/></svg></i><b>Membresías</b><span>y planes</span></div>
-          <div><i><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg></i><b>Panel</b><span>administrativo</span></div>
-          <div><i><svg viewBox="0 0 24 24"><path d="M4 7h4l1.5-2h5L16 7h4a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Z"/><circle cx="12" cy="13" r="4"/></svg></i><b>Cámara</b><span>y QR</span></div>
-          <div><i><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20V7"/></svg></i><b>Estadísticas</b><span>y reportes</span></div>
+    <section class="apps-section examples-section" id="ejemplos" aria-labelledby="examples-title">
+      <div class="shell">
+        <div class="section-heading">
+          <h2 id="examples-title">Así se usaría <em>tu app.</em></h2>
+          <p>Elige un giro para ver un recorrido de ejemplo. Las pantallas muestran conceptos ficticios.</p>
+        </div>
+        <div class="app-filters" role="group" aria-label="Filtrar ejemplos por giro">
+          <button type="button" data-app-filter="todos" aria-pressed="true">Todos</button>
+          <button type="button" data-app-filter="comida" aria-pressed="false">Restaurantes</button>
+          <button type="button" data-app-filter="salud" aria-pressed="false">Citas y salud</button>
+          <button type="button" data-app-filter="fitness" aria-pressed="false">Fitness</button>
+          <button type="button" data-app-filter="eventos" aria-pressed="false">Eventos</button>
+        </div>
+        <div class="app-examples">
+          <article class="app-example food-example" data-app-category="comida">
+            <div class="example-visual"><img src="/enla-example-foodora.webp" alt="Pantalla de ejemplo con menú y promociones de un restaurante" width="507" height="760" loading="lazy"></div>
+            <div class="example-copy"><h3>Menú y pedidos</h3><p>El cliente elige sus productos y hace el pedido. Tu equipo lo recibe desde el panel y actualiza su estado.</p></div>
+          </article>
+          <article class="app-example health-example" data-app-category="salud">
+            <div class="example-visual"><img src="/enla-example-medicare.webp" alt="Pantalla de ejemplo para solicitar citas con especialistas" width="507" height="760" loading="lazy"></div>
+            <div class="example-copy"><h3>Agenda y citas</h3><p>El cliente consulta horarios, solicita una cita y recibe un recordatorio. Tu equipo revisa la agenda en un solo lugar.</p></div>
+          </article>
+          <article class="app-example fitness-example" data-app-category="fitness">
+            <div class="example-visual"><img src="/enla-example-fitlab.webp" alt="Pantalla de ejemplo con clases, rutinas y progreso de entrenamiento" width="507" height="760" loading="lazy"></div>
+            <div class="example-copy"><h3>Clases y membresías</h3><p>Los socios reservan una clase y consultan su plan. Tu equipo administra horarios y cupos.</p></div>
+          </article>
+          <article class="app-example events-example" data-app-category="eventos">
+            <div class="example-visual"><img src="/enla-example-nexora.webp" alt="Pantalla de ejemplo con eventos y boletos digitales" width="507" height="760" loading="lazy"></div>
+            <div class="example-copy"><h3>Eventos y accesos</h3><p>El público descubre eventos y guarda sus boletos en la app. Tu equipo puede validar el acceso con un código QR.</p></div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="stores section">
-      <div class="wrap store-section">
-        <div>
-          <span class="eyebrow light">LISTA PARA PUBLICARSE</span>
-          <h2>Publicamos tu app en<br>App Store y Google Play.</h2>
-          <p>Nos encargamos de acompañarte durante el proceso para que tu app esté disponible en las tiendas oficiales.</p>
-          <div class="store-row">
-            <div class="store-badge"><span class="apple"></span><span><small>Tu App en</small><b>App Store</b></span></div>
-            <div class="store-badge"><span class="play">▶</span><span><small>Tu App en</small><b>Google Play</b></span></div>
+    <section class="apps-section apps-includes" id="incluye" aria-labelledby="includes-title">
+      <div class="shell">
+        <div class="section-heading">
+          <h2 id="includes-title">Qué puede incluir <em>tu app.</em></h2>
+          <p>Definimos el alcance en la cotización. Puedes empezar con las funciones que tu negocio necesita hoy y agregar otras después.</p>
+        </div>
+        <div class="app-capabilities">
+          <article class="app-capability">
+            <div class="tile-icon"><i data-icon="mobile"></i></div>
+            <h3>Una experiencia con tu marca</h3>
+            <p>Diseñamos el recorrido para que tus clientes encuentren lo que necesitan y puedan completar la acción desde el celular.</p>
+            <ul><li>Identidad visual y navegación</li><li>Perfiles e inicio de sesión, si aplica</li><li>Versiones para iPhone y Android</li></ul>
+          </article>
+          <article class="app-capability">
+            <div class="tile-icon green"><i data-icon="gift"></i></div>
+            <h3>Funciones para tus clientes</h3>
+            <p>Facilita pedidos y reservas, mantén a tus clientes al tanto y dales un lugar para consultar sus beneficios.</p>
+            <ul><li>Catálogo, pedidos y pagos</li><li>Reservas, citas o membresías</li><li>Recordatorios y notificaciones</li></ul>
+          </article>
+          <article class="app-capability">
+            <div class="tile-icon amber"><i data-icon="window"></i></div>
+            <h3>Control para tu equipo</h3>
+            <p>Consulta la actividad de la app y actualiza el contenido desde un panel para tu equipo.</p>
+            <ul><li>Gestión de pedidos, horarios o usuarios</li><li>Edición de contenido y promociones</li><li>Estadísticas según las funciones contratadas</li></ul>
+          </article>
+        </div>
+        <div class="apps-admin">
+          <div>
+            <p class="eyebrow">Panel administrativo</p>
+            <h3>Tu equipo puede gestionar la app desde la computadora.</h3>
+            <p>Por ejemplo, en una app de reservas, tu equipo puede abrir horarios, revisar las solicitudes del día y actualizar la disponibilidad que ven los clientes.</p>
+          </div>
+          <img src="/enla-admin-panel.webp" alt="Concepto de un panel administrativo con reportes y gestión de eventos" width="947" height="1000" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="apps-section apps-process" id="proceso" aria-labelledby="process-title">
+      <div class="shell">
+        <div class="section-heading">
+          <h2 id="process-title">De la idea <em>a las tiendas.</em></h2>
+          <p>Te mostramos qué se decide en cada etapa del proyecto.</p>
+        </div>
+        <ol class="app-steps">
+          <li><h3>Definimos el alcance</h3><p>Revisamos a quién va dirigida la app, qué problema resuelve y qué funciones van en la primera versión.</p></li>
+          <li><h3>Diseñamos el recorrido</h3><p>Ves una propuesta de pantallas y revisas cómo se completa la acción principal, como comprar o reservar.</p></li>
+          <li><h3>Desarrollamos y probamos</h3><p>Construimos las funciones acordadas y comprobamos el recorrido en iPhone y Android.</p></li>
+          <li><h3>Preparamos la publicación</h3><p>Te acompañamos con la ficha y el envío a revisión en App Store y Google Play.</p></li>
+        </ol>
+        <div class="apps-faq">
+          <h3>Antes de cotizar</h3>
+          <div>
+            <details><summary>¿Cómo se definen el precio y el plazo?</summary><p>Dependen de las funciones, las integraciones y el panel que necesites. Con esa información definimos la primera versión y te compartimos el alcance de la cotización.</p></details>
+            <details><summary>¿Qué necesito para empezar?</summary><p>Cuéntanos quién usaría la app, qué acción te interesa que pueda completar y cómo atiendes hoy esa necesidad. Si ya tienes catálogo, agenda o manual de marca, también nos sirven para definir el proyecto.</p></details>
+            <details><summary>¿Se puede conectar con herramientas que ya uso?</summary><p>Podemos revisar tu agenda, catálogo, pasarela de pagos u otro sistema. La posibilidad de conectarlos depende de las integraciones que tenga cada plataforma.</p></details>
+            <details><summary>¿Qué pasa después de publicar?</summary><p>Podemos acordar soporte, actualizaciones y nuevas funciones. En la cotización se puede especificar qué tareas se incluyen después del lanzamiento.</p></details>
           </div>
         </div>
-        <img src="images/store-phone.png" alt="Teléfono mostrando una app lista para publicar" />
       </div>
     </section>
 
-    <section class="section admin">
-      <div class="wrap two-col admin-grid">
-        <div>
-          <span class="eyebrow">TODO BAJO CONTROL</span>
-          <h2>Tu app, tu negocio<br>bajo control.</h2>
-          <p>Desarrollamos un panel administrativo para que gestiones usuarios, pedidos, reservas, contenido, estadísticas y mucho más.</p>
-          <ul class="check-list">
-            <li>Gestión de usuarios y roles</li><li>Pedidos, reservas y pagos</li><li>Contenido y notificaciones</li><li>Reportes y estadísticas</li>
-          </ul>
+    <section class="contact-section apps-quote" id="cotizar" aria-labelledby="quote-title">
+      <div class="shell contact">
+        <div class="quote-copy">
+          <p class="eyebrow">Cotización de Apps</p>
+          <h2 id="quote-title">Cuéntanos <em>tu idea.</em></h2>
+          <p>Con tu giro y las funciones que tienes en mente podemos ayudarte a definir la primera versión.</p>
+          <a class="button button-outline" href="https://wa.me/524412123348?text=Hola%20Enla%2C%20quiero%20cotizar%20una%20app%20para%20mi%20negocio." target="_blank" rel="noopener noreferrer"><i data-icon="chat"></i> Consultar por WhatsApp</a>
         </div>
-        <div class="image-card wide"><img src="images/admin-panel.png" alt="Panel administrativo ficticio" /></div>
-      </div>
-    </section>
-
-    <section class="section process" id="proceso">
-      <div class="wrap">
-        <div class="section-head centered"><span class="eyebrow">DE LA IDEA A LAS TIENDAS</span><h2>Así es nuestro proceso.</h2></div>
-        <div class="steps">
-          <div><strong>01</strong><h3>Cuéntanos tu idea</h3><p>Entendemos tu proyecto y tus objetivos.</p></div>
-          <div><strong>02</strong><h3>Diseñamos tu app</h3><p>Creamos la experiencia y el diseño perfecto.</p></div>
-          <div><strong>03</strong><h3>Desarrollamos</h3><p>Construimos las funciones que necesitas.</p></div>
-          <div><strong>04</strong><h3>Publicamos tu app</h3><p>Te acompañamos para publicarla en las tiendas.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="quote section" id="cotizar">
-      <div class="wrap quote-card">
-        <div class="quote-copy"><span class="eyebrow light">EMPIEZA TU PROYECTO</span><h2>¿Listo para crear tu app?</h2><p>Cuéntanos qué tienes en mente y te ayudamos a convertirlo en una app.</p></div>
-        <form id="quoteForm" class="quote-form">
-          <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="form-honey" aria-hidden="true" />
-          <div class="form-grid"><input required name="nombre" placeholder="Tu nombre" /><input required name="contacto" placeholder="WhatsApp o correo" /></div>
-          <select name="tipo" required><option value="" selected disabled>¿Qué tipo de app necesitas?</option><option>App para mi negocio</option><option>Restaurante / delivery</option><option>Citas / reservaciones</option><option>Fitness / membresías</option><option>Eventos / entretenimiento</option><option>Juego</option><option>Otra idea</option></select>
-          <textarea required name="idea" rows="4" placeholder="Cuéntanos brevemente tu idea..."></textarea>
-          <div class="turnstile-wrap">
-            <div id="turnstileWidget" aria-label="Verificación de seguridad"></div>
+        <form class="contact-form quote-form" id="contact-form" action="/api/contact" method="post">
+          <div class="contact-fields">
+            <label>Nombre<input name="nombre" autocomplete="name" maxlength="120" required></label>
+            <label>WhatsApp o correo<input name="contacto" maxlength="180" required></label>
+            <label class="contact-message">Tipo de app
+              <select name="tipo" required>
+                <option value="" disabled selected>Selecciona una opción</option>
+                <option>App para mi negocio</option><option>Restaurante o delivery</option><option>Citas o reservaciones</option><option>Fitness o membresías</option><option>Eventos o entretenimiento</option><option>Juego</option><option>Otra idea</option>
+              </select>
+            </label>
+            <label class="contact-message">¿Qué te gustaría que hiciera tu app?<textarea name="idea" rows="4" maxlength="2000" required></textarea></label>
           </div>
-          <button class="btn btn-light" id="quoteSubmit" type="submit" disabled>Cotizar mi app ahora <span>→</span></button>
-          <p id="formMessage" class="form-message" aria-live="polite"></p>
+          <div id="quote-verification" aria-label="Verificación de seguridad"></div>
+          <div class="contact-submit"><button class="button button-primary" type="submit" disabled>Enviar solicitud de cotización</button><span class="contact-feedback" role="status"></span></div>
         </form>
       </div>
     </section>
   </main>
-
-  <a class="floating-quote" href="#cotizar" aria-label="Ir al formulario para cotizar mi app">Cotizar mi app <span>→</span></a>
-
-  <footer class="footer wrap"><a class="brand" href="#inicio">apps.<span>enla</span></a><p>Diseño y desarrollo de aplicaciones para iOS y Android.</p><small>© 2026 Enla. Todos los derechos reservados.</small></footer>
-  <script src="script.js?v=20260904-0215"></script>
+  <footer class="footer">
+    <div class="shell footer-inner">
+      <a class="brand" href="https://www.enla.mx/" aria-label="Enla, inicio"><i data-icon="brand"></i><span>enla<b>.</b></span></a>
+      <p>© 2026 Enla · México</p>
+      <a href="https://www.enla.mx/">enla.mx</a>
+    </div>
+  </footer>
+  <a class="whatsapp-float" href="https://wa.me/524412123348?text=Hola%20Enla%2C%20quiero%20cotizar%20una%20app%20para%20mi%20negocio." target="_blank" rel="noopener noreferrer" aria-label="Escribir a Enla por WhatsApp">
+    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21.5 11.8a9.5 9.5 0 0 1-14 8.4L2.5 21.5l1.4-4.9a9.5 9.5 0 1 1 17.6-4.8Z"/>
+      <path fill="currentColor" stroke="none" d="M8.6 6.8c-.6 0-1.5.7-1.5 2.1 0 2.8 3.9 6.6 6.7 7.3 1.2.3 2.7-.6 2.9-1.6.1-.4 0-.6-.4-.8l-2-1c-.3-.1-.5-.1-.7.1l-.8.9c-.2.2-.4.2-.7 0a8.4 8.4 0 0 1-3-2.9c-.1-.2-.1-.4.1-.5l.5-.6c.2-.2.3-.4.2-.7l-.8-1.9c-.1-.3-.3-.4-.5-.4Z"/>
+    </svg>
+  </a>
 </body>
 </html>
