@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="/apps.css">
   <script defer src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"></script>
   <script defer src="/verification.js"></script>
-  <script defer src="/script.js"></script>
+  <script defer src="/script.js?v=contacto-20261124"></script>
 </head>
 <body>
   <a class="skip" href="#contenido">Ir al contenido</a>
@@ -161,12 +161,40 @@
           <p class="eyebrow">Cotización de Apps</p>
           <h2 id="quote-title">Cuéntanos <em>tu idea.</em></h2>
           <p>Con tu giro y las funciones que tienes en mente podemos ayudarte a definir la primera versión.</p>
-          <a class="button button-outline" href="https://wa.me/524412123348?text=Hola%20Enla%2C%20quiero%20cotizar%20una%20app%20para%20mi%20negocio." target="_blank" rel="noopener noreferrer"><i data-icon="chat"></i> Consultar por WhatsApp</a>
         </div>
         <form class="contact-form quote-form" id="contact-form" action="/api/contact" method="post">
           <div class="contact-fields">
+            <small class="contact-message">Deja tu teléfono, tu correo o ambos.</small>
             <label>Nombre<input name="nombre" autocomplete="name" maxlength="120" required></label>
-            <label>WhatsApp o correo<input name="contacto" maxlength="180" required></label>
+            <div class="contact-phone">
+              <label for="contact-phone">Número de teléfono</label>
+              <div class="contact-phone-controls">
+                <select name="prefijo" aria-label="Prefijo telefónico internacional" autocomplete="tel-country-code">
+                  <option value="+52" selected>🇲🇽 +52</option>
+                  <option value="+1">🇺🇸 +1</option>
+                  <option value="+1">🇨🇦 +1</option>
+                  <option value="+502">🇬🇹 +502</option>
+                  <option value="+503">🇸🇻 +503</option>
+                  <option value="+504">🇭🇳 +504</option>
+                  <option value="+505">🇳🇮 +505</option>
+                  <option value="+506">🇨🇷 +506</option>
+                  <option value="+507">🇵🇦 +507</option>
+                  <option value="+57">🇨🇴 +57</option>
+                  <option value="+58">🇻🇪 +58</option>
+                  <option value="+593">🇪🇨 +593</option>
+                  <option value="+51">🇵🇪 +51</option>
+                  <option value="+591">🇧🇴 +591</option>
+                  <option value="+56">🇨🇱 +56</option>
+                  <option value="+54">🇦🇷 +54</option>
+                  <option value="+598">🇺🇾 +598</option>
+                  <option value="+595">🇵🇾 +595</option>
+                  <option value="+55">🇧🇷 +55</option>
+                  <option value="+34">🇪🇸 +34</option>
+                </select>
+                <input id="contact-phone" name="telefono" type="tel" autocomplete="tel-national" maxlength="32">
+              </div>
+            </div>
+            <label>Correo electrónico<input name="correo" type="email" autocomplete="email" maxlength="140"></label>
             <label class="contact-message">Tipo de app
               <select name="tipo" required>
                 <option value="" disabled selected>Selecciona una opción</option>

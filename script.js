@@ -123,16 +123,33 @@ initEnlaVerification("#quote-verification", {
 contactForm.addEventListener("submit", async (event) => {
   event.preventDefault();
   if (!quoteToken || quoteSending) return;
+  const {nombre, prefijo, telefono, correo, tipo, idea} = Object.fromEntries(new FormData(contactForm));
+  const phone = telefono.trim();
+  const email = correo.trim();
+  if (!phone && !email) {
+    quoteStatus("Escribe un número de teléfono o un correo electrónico.", true);
+    contactForm.elements.telefono.focus();
+    return;
+  }
+
+  const internationalPhone = phone && (phone.startsWith("+") ? phone : `${prefijo} ${phone}`);
+  const digits = internationalPhone.replace(/[^0-9]/g, "");
+  if (phone && (!/^\+?[0-9 ().-]+$/.test(internationalPhone) || phone.replace(/[^0-9]/g, "").length < 7 || digits.length > 15)) {
+    quoteStatus("Escribe un número de teléfono válido.", true);
+    contactForm.elements.telefono.focus();
+    return;
+  }
+
+  const contacto = [internationalPhone, email].filter(Boolean).join(" · ");
   quoteSending = true;
   quoteSubmit.disabled = true;
   quoteStatus("Enviando solicitud…");
 
   try {
-    const fields = Object.fromEntries(new FormData(contactForm));
     const response = await fetch(contactForm.action, {
       method: "POST",
       headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({...fields, turnstileToken: quoteToken})
+      body: JSON.stringify({nombre, contacto, tipo, idea, turnstileToken: quoteToken})
     });
     const result = await response.json();
     if (!response.ok || !result.success) throw new Error(result.error);
